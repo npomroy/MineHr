@@ -1,0 +1,16 @@
+[
+{
+  "modid": "MineHr",
+  "name": "Mine Hr",
+  "description": "First mod created by Kraz",
+  "version": "0.1",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Kraz"],
+  "credits": "The giants on whose shoulders we all stand",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
