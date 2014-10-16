@@ -1,0 +1,80 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 10/15/14 8:56 PM
+Description: Ticking player
+
+java.lang.NullPointerException: Ticking player
+	at com.kraz.minehr.container.ContainerOilLamp.canInteractWith(ContainerOilLamp.java:110)
+	at net.minecraftforge.event.entity.player.PlayerOpenContainerEvent.<init>(PlayerOpenContainerEvent.java:27)
+	at net.minecraftforge.common.ForgeHooks.canInteractWith(ForgeHooks.java:386)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:329)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:330)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:329)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer$C05PacketPlayerLook.processPacket(C03PacketPlayer.java:210)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.kraz.minehr.container.ContainerOilLamp.canInteractWith(ContainerOilLamp.java:110)
+	at net.minecraftforge.event.entity.player.PlayerOpenContainerEvent.<init>(PlayerOpenContainerEvent.java:27)
+	at net.minecraftforge.common.ForgeHooks.canInteractWith(ForgeHooks.java:386)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:329)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 242
+	Entity Name: Player233
+	Entity's Exact location: -490.53, 73.00, 46.04
+	Entity's Block location: World: (-491,73,46), Chunk: (at 5,4,14 in -31,2; contains blocks -496,0,32 to -481,255,47), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:330)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:329)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer$C05PacketPlayerLook.processPacket(C03PacketPlayer.java:210)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@5eaa57fa
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_11, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 750806984 bytes (716 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 13, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.05 FML v7.10.85.1224 Minecraft Forge 10.13.1.1224 4 mods loaded, 4 mods active
+	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{7.10.85.1224} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.1.1224.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{10.13.1.1224} [Minecraft Forge] (forgeSrc-1.7.10-10.13.1.1224.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	MineHr{1.7.10-0.1} [Mine Harbour] (MineHr) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player233'/242, l='New World', x=-490.53, y=73.00, z=46.04]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

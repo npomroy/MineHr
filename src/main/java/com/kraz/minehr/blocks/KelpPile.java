@@ -1,6 +1,7 @@
 package com.kraz.minehr.blocks;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -21,6 +22,6 @@ public class KelpPile extends Block {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5));
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
     }
 }

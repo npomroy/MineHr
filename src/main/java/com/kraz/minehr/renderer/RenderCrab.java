@@ -3,6 +3,7 @@ package com.kraz.minehr.renderer;
 import com.kraz.minehr.MineHr;
 import com.kraz.minehr.entity.EntityCrab;
 import com.kraz.minehr.model.ModelCrab;
+import com.kraz.minehr.reference.Reference;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
@@ -11,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCrab extends RenderLiving {
 
-    private static final ResourceLocation texture = new ResourceLocation(MineHr.modid + ":" + "textures/model/Crab.png");
+    private static final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID + ":" + "textures/model/Crab.png");
 
     protected ModelCrab modelEntity;
 

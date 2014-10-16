@@ -3,6 +3,7 @@ package com.kraz.minehr.biome.features;
 import java.util.List;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.reference.Reference;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,8 +29,8 @@ public class MHLog extends BlockLog {
         this.field_150166_b = new IIcon[logs.length];
 
         for (int i = 0; i < this.field_150167_a.length; i++) {
-            this.field_150167_a[i] = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5) + logs[i]);
-            this.field_150166_b[i] = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5) + logs[i] + "Top");
+            this.field_150167_a[i] = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + logs[i]);
+            this.field_150166_b[i] = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + logs[i] + "Top");
         }
     }
 }

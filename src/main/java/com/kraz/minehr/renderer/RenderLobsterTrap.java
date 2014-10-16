@@ -1,6 +1,7 @@
 package com.kraz.minehr.renderer;
 
 import com.kraz.minehr.model.ModelLobsterTrap;
+import com.kraz.minehr.reference.Reference;
 import org.lwjgl.opengl.GL11;
 
 import com.kraz.minehr.MineHr;
@@ -10,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLobsterTrap extends TileEntitySpecialRenderer {
 
-    private static final ResourceLocation texture = new ResourceLocation(MineHr.modid + ":" + "textures/model/LobsterTrap.png");
+    private static final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID + ":" + "textures/model/LobsterTrap.png");
 
     private ModelLobsterTrap model;
 

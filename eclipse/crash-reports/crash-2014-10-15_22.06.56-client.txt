@@ -1,0 +1,125 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 10/15/14 10:06 PM
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at com.kraz.minehr.tileentity.TileEntityOilLamp.setInventorySlotContents(TileEntityOilLamp.java:120)
+	at net.minecraft.inventory.Slot.putStack(Slot.java:104)
+	at net.minecraft.inventory.Container.putStacksInSlots(Container.java:558)
+	at net.minecraft.client.network.NetHandlerPlayClient.handleWindowItems(NetHandlerPlayClient.java:1196)
+	at net.minecraft.network.play.server.S30PacketWindowItems.processPacket(S30PacketWindowItems.java:70)
+	at net.minecraft.network.play.server.S30PacketWindowItems.processPacket(S30PacketWindowItems.java:78)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.updateController(PlayerControllerMP.java:317)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1682)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1028)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:951)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at GradleStart.bounce(GradleStart.java:107)
+	at GradleStart.startClient(GradleStart.java:100)
+	at GradleStart.main(GradleStart.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.kraz.minehr.tileentity.TileEntityOilLamp.setInventorySlotContents(TileEntityOilLamp.java:120)
+	at net.minecraft.inventory.Slot.putStack(Slot.java:104)
+	at net.minecraft.inventory.Container.putStacksInSlots(Container.java:558)
+	at net.minecraft.client.network.NetHandlerPlayClient.handleWindowItems(NetHandlerPlayClient.java:1196)
+	at net.minecraft.network.play.server.S30PacketWindowItems.processPacket(S30PacketWindowItems.java:70)
+	at net.minecraft.network.play.server.S30PacketWindowItems.processPacket(S30PacketWindowItems.java:78)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.updateController(PlayerControllerMP.java:317)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player585'/272, l='MpServer', x=-490.53, y=74.62, z=46.04]]
+	Chunk stats: MultiplayerChunkCache: 175, 175
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-487,64,44), Chunk: (at 9,4,12 in -31,2; contains blocks -496,0,32 to -481,255,47), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 172339 game time, 1576 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 52 total; [EntitySkeleton['Skeleton'/128, l='MpServer', x=-486.91, y=48.00, z=120.16], EntityBat['Bat'/141, l='MpServer', x=-470.44, y=47.53, z=87.25], EntityBat['Bat'/142, l='MpServer', x=-468.36, y=47.06, z=83.37], EntityClientPlayerMP['Player585'/272, l='MpServer', x=-490.53, y=74.62, z=46.04], EntitySheep['Sheep'/148, l='MpServer', x=-453.91, y=70.00, z=15.50], EntitySheep['Sheep'/149, l='MpServer', x=-463.72, y=68.00, z=67.47], EntitySquid['Squid'/150, l='MpServer', x=-455.09, y=48.28, z=106.32], EntitySquid['Squid'/151, l='MpServer', x=-448.15, y=48.31, z=100.25], EntitySheep['Sheep'/158, l='MpServer', x=-434.56, y=64.00, z=-22.40], EntitySheep['Sheep'/159, l='MpServer', x=-435.84, y=64.00, z=-29.88], EntitySheep['Sheep'/160, l='MpServer', x=-433.91, y=69.00, z=30.03], EntitySquid['Squid'/161, l='MpServer', x=-437.78, y=49.28, z=98.24], EntityZombie['Zombie'/171, l='MpServer', x=-419.78, y=33.00, z=-5.31], EntityZombie['Zombie'/192, l='MpServer', x=-413.41, y=14.00, z=-13.69], EntitySheep['Sheep'/64, l='MpServer', x=-570.97, y=62.00, z=16.13], EntityBat['Bat'/65, l='MpServer', x=-562.73, y=65.80, z=17.59], EntityBat['Bat'/69, l='MpServer', x=-550.97, y=78.77, z=10.53], EntitySheep['Sheep'/70, l='MpServer', x=-547.53, y=75.00, z=19.53], EntitySkeleton['Skeleton'/198, l='MpServer', x=-411.31, y=37.00, z=1.62], EntitySheep['Sheep'/71, l='MpServer', x=-559.31, y=71.00, z=23.56], EntityBat['Bat'/72, l='MpServer', x=-546.47, y=30.68, z=44.19], EntityBat['Bat'/73, l='MpServer', x=-549.09, y=61.10, z=32.00], EntityBat['Bat'/74, l='MpServer', x=-551.25, y=27.10, z=52.25], EntitySheep['Sheep'/75, l='MpServer', x=-556.81, y=73.00, z=65.66], EntitySheep['Sheep'/76, l='MpServer', x=-548.25, y=73.00, z=75.91], EntityBat['Bat'/84, l='MpServer', x=-534.65, y=59.69, z=16.04], EntityCrab['Crab'/85, l='MpServer', x=-543.38, y=34.00, z=25.59], EntityBat['Bat'/86, l='MpServer', x=-544.53, y=34.75, z=25.07], EntitySheep['Sheep'/87, l='MpServer', x=-534.50, y=79.00, z=19.50], EntitySkeleton['Skeleton'/88, l='MpServer', x=-543.63, y=33.00, z=36.88], EntityCrab['Crab'/91, l='MpServer', x=-523.48, y=26.00, z=-17.27], EntityCrab['Crab'/92, l='MpServer', x=-520.00, y=28.00, z=-15.97], EntityCrab['Crab'/93, l='MpServer', x=-521.50, y=27.00, z=-16.00], EntitySheep['Sheep'/94, l='MpServer', x=-522.50, y=72.63, z=50.94], EntitySheep['Sheep'/101, l='MpServer', x=-505.56, y=71.00, z=-33.66], EntitySheep['Sheep'/102, l='MpServer', x=-499.56, y=76.00, z=-19.34], EntitySheep['Sheep'/112, l='MpServer', x=-483.56, y=71.00, z=-32.50], EntitySheep['Sheep'/113, l='MpServer', x=-496.14, y=71.00, z=-32.57], EntitySheep['Sheep'/114, l='MpServer', x=-495.50, y=75.00, z=-10.44], EntitySheep['Sheep'/115, l='MpServer', x=-486.53, y=72.00, z=5.91], EntitySheep['Sheep'/116, l='MpServer', x=-484.47, y=72.00, z=11.34], EntityZombie['Zombie'/117, l='MpServer', x=-489.91, y=36.00, z=88.22], EntityZombie['Zombie'/118, l='MpServer', x=-485.16, y=35.00, z=92.91], EntityZombie['Zombie'/119, l='MpServer', x=-485.47, y=35.00, z=91.34], EntityBat['Bat'/120, l='MpServer', x=-480.63, y=48.10, z=84.53], EntityCreeper['Creeper'/121, l='MpServer', x=-495.06, y=37.00, z=101.28], EntityZombie['Zombie'/122, l='MpServer', x=-491.00, y=42.00, z=109.56], EntityBat['Bat'/123, l='MpServer', x=-490.05, y=41.48, z=108.59], EntityBat['Bat'/124, l='MpServer', x=-487.59, y=48.10, z=113.91], EntityZombie['Zombie'/125, l='MpServer', x=-487.44, y=48.00, z=121.06], EntityCreeper['Creeper'/126, l='MpServer', x=-489.44, y=48.00, z=120.06], EntitySkeleton['Skeleton'/127, l='MpServer', x=-486.31, y=48.00, z=119.03]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2555)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:980)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at GradleStart.bounce(GradleStart.java:107)
+	at GradleStart.startClient(GradleStart.java:100)
+	at GradleStart.main(GradleStart.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_11, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 654223304 bytes (623 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 13, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.05 FML v7.10.85.1224 Minecraft Forge 10.13.1.1224 4 mods loaded, 4 mods active
+	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{7.10.85.1224} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.1.1224.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{10.13.1.1224} [Minecraft Forge] (forgeSrc-1.7.10-10.13.1.1224.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	MineHr{1.7.10-0.1} [Mine Harbour] (MineHr) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: GeForce GTX 650 Ti/PCIe/SSE2 GL version 4.4.0, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

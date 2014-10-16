@@ -3,6 +3,8 @@ package com.kraz.minehr.blocks;
 import java.util.Random;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.init.ItemInit;
+import com.kraz.minehr.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -22,7 +24,7 @@ public class KelpStone extends Block {
     }
 
     public Item getItemDropped(int i, Random random, int j) {
-        return MineHr.itemKelp;
+        return ItemInit.itemKelp;
     }
 
     public int quantityDropped(Random random) {
@@ -31,6 +33,6 @@ public class KelpStone extends Block {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5));
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
     }
 }

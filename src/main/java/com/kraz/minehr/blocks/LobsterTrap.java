@@ -1,5 +1,6 @@
 package com.kraz.minehr.blocks;
 
+import com.kraz.minehr.reference.Reference;
 import com.kraz.minehr.tileentity.TileEntityLobsterTrap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,7 +19,7 @@ public class LobsterTrap extends BlockContainer {
 
         this.setHardness(3.0F);
         this.setResistance(5.0F);
-        this.setBlockBounds(-0.9375F, 0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
+        this.setBlockBounds(0.0F, 0F, 0.0F, 1.0F, 0.625F, 1.0F);
         this.setStepSound(soundTypeWood);
         this.setCreativeTab(MineHr.mineHrTab);
     }
@@ -42,7 +43,7 @@ public class LobsterTrap extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5));
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
     }
 
 }

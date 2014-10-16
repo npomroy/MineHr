@@ -3,6 +3,7 @@ package com.kraz.minehr.handler;
 import java.util.Random;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.init.ItemInit;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
@@ -21,7 +22,7 @@ public class CraftingHandler {
                 ItemStack item0 = event.craftMatrix.getStackInSlot(i);
                 if(item0 != null && item0.getItem() == MineHr.itemFilletKnife) {
                     ItemStack k = new ItemStack(MineHr.itemFilletKnife, 2, (item0.getItemDamage() + 1));
-                    ItemStack f = new ItemStack(MineHr.itemFishGuts, 2);
+                    ItemStack f = new ItemStack(ItemInit.itemFishGuts, 2);
 
 
                     if(k.getItemDamage() >= k.getMaxDamage()){

@@ -1,6 +1,6 @@
 package com.kraz.minehr.proxy;
 
-public class CommonProxy {
+public abstract class CommonProxy implements IProxy {
 
     public void registerRenderThings() {
 

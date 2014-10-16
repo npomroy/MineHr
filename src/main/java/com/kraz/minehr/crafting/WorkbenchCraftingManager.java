@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import com.kraz.minehr.init.ItemInit;
 import cpw.mods.fml.common.registry.GameRegistry;
 import com.kraz.minehr.MineHr;
 import net.minecraft.block.Block;
@@ -171,17 +172,17 @@ public class WorkbenchCraftingManager
 
         this.addRecipe(new ItemStack(Items.boat, 1), new Object[] {"    ", "C  C", "C  C", "CCCC", 'C', Blocks.planks});
         this.addRecipe(new ItemStack(MineHr.itemJigger, 1), new Object[] {"CDDC", "C  C", "C  C", "CDDC", 'C', Blocks.planks, 'D', Items.stick});
-        this.addRecipe(new ItemStack(Items.fishing_rod, 1), new Object[] {"   C", "  CD", " C D", "C  E", 'C', Items.stick, 'D', Items.string, 'E', MineHr.itemBoneHook});
-        this.addRecipe(new ItemStack(MineHr.itemIronRod, 1), new Object[] {"   C", "  CD", " C D", "C  E", 'C', Items.stick, 'D', Items.string, 'E', MineHr.itemIronHook});
-        this.addRecipe(new ItemStack(MineHr.blockTrapBuoy, 1), new Object[] {" CC ", "C  C", "C  C", "CCCC", 'C', MineHr.itemNaturalRubber});
-        this.addRecipe(new ItemStack(MineHr.blockLobsterTrap, 1), new Object[] {"DDDD", "DEED", "DEED", "CCCC", 'C', Blocks.planks, 'D', Items.stick, 'E', MineHr.itemNetting});
-        this.addRecipe(new ItemStack(MineHr.itemReadyLobsterTrap, 1), new Object[] {"CDDD", "   D", "E  D", "FDDD", 'C', MineHr.blockTrapBuoy, 'D', MineHr.itemRope, 'E', MineHr.itemFishGuts, 'F', MineHr.blockLobsterTrap});
-        this.addRecipe(new ItemStack(MineHr.itemHorizonCrystal, 1), new Object[] {"GEGE", "KKKK", "ZZZZ", "EGEG", 'E', Items.ender_pearl, 'G', Items.gunpowder, 'K', MineHr.itemKraziteCrystal, 'Z', MineHr.itemZarkiteCrystal});
+        this.addRecipe(new ItemStack(Items.fishing_rod, 1), new Object[] {"   C", "  CD", " C D", "C  E", 'C', Items.stick, 'D', Items.string, 'E', ItemInit.itemBoneHook});
+        this.addRecipe(new ItemStack(MineHr.itemIronRod, 1), new Object[] {"   C", "  CD", " C D", "C  E", 'C', Items.stick, 'D', Items.string, 'E', ItemInit.itemIronHook});
+        this.addRecipe(new ItemStack(MineHr.blockTrapBuoy, 1), new Object[] {" CC ", "C  C", "C  C", "CCCC", 'C', ItemInit.itemNaturalRubber});
+        this.addRecipe(new ItemStack(MineHr.blockLobsterTrap, 1), new Object[] {"DDDD", "DEED", "DEED", "CCCC", 'C', Blocks.planks, 'D', Items.stick, 'E', ItemInit.itemNetting});
+        this.addRecipe(new ItemStack(ItemInit.itemReadyLobsterTrap, 1), new Object[] {"CDDD", "   D", "E  D", "FDDD", 'C', MineHr.blockTrapBuoy, 'D', ItemInit.itemRope, 'E', ItemInit.itemFishGuts, 'F', MineHr.blockLobsterTrap});
+        this.addRecipe(new ItemStack(ItemInit.itemHorizonCrystal, 1), new Object[] {"GEGE", "KKKK", "ZZZZ", "EGEG", 'E', Items.ender_pearl, 'G', Items.gunpowder, 'K', ItemInit.itemKraziteCrystal, 'Z', ItemInit.itemZarkiteCrystal});
 
-        this.addRecipe(new ItemStack(MineHr.armorHorizonHat, 1), new Object[] {"HHHH", "HGGH", "RLIR", 'H', MineHr.itemHorizonCrystal, 'G', Blocks.glass_pane, 'R', MineHr.itemNaturalRubber, 'L', Items.leather_helmet, 'I', Items.iron_helmet});
-        this.addRecipe(new ItemStack(MineHr.armorHorizonChest, 1), new Object[] {"HWWH", "XLIX", "HHHH", "HHHH", 'H', MineHr.itemHorizonCrystal, 'W', Blocks.wool, 'X', Items.iron_ingot, 'L', Items.leather_chestplate, 'I', Items.iron_chestplate});
-        this.addRecipe(new ItemStack(MineHr.armorHorizonLegs, 1), new Object[] {"RHHR", "HLIH", "HKZH", "HKZH", 'H', MineHr.itemHorizonCrystal, 'R', MineHr.itemNaturalRubber, 'L', Items.leather_leggings, 'I', Items.iron_leggings, 'K', MineHr.itemKraziteCrystal, 'Z', MineHr.itemZarkiteCrystal});
-        this.addRecipe(new ItemStack(MineHr.armorHorizonBoots, 1), new Object[] {" W W", "HHHH", "HLHI", "RRRR", 'H', MineHr.itemHorizonCrystal, 'W', Blocks.wool, 'L', Items.leather_boots, 'I', Items.iron_boots, 'R', MineHr.itemNaturalRubber});
+        this.addRecipe(new ItemStack(MineHr.armorHorizonHat, 1), new Object[] {"HHHH", "HGGH", "RLIR", 'H', ItemInit.itemHorizonCrystal, 'G', Blocks.glass_pane, 'R', ItemInit.itemNaturalRubber, 'L', Items.leather_helmet, 'I', Items.iron_helmet});
+        this.addRecipe(new ItemStack(MineHr.armorHorizonChest, 1), new Object[] {"HWWH", "XLIX", "HHHH", "HHHH", 'H', ItemInit.itemHorizonCrystal, 'W', Blocks.wool, 'X', Items.iron_ingot, 'L', Items.leather_chestplate, 'I', Items.iron_chestplate});
+        this.addRecipe(new ItemStack(MineHr.armorHorizonLegs, 1), new Object[] {"RHHR", "HLIH", "HKZH", "HKZH", 'H', ItemInit.itemHorizonCrystal, 'R', ItemInit.itemNaturalRubber, 'L', Items.leather_leggings, 'I', Items.iron_leggings, 'K', ItemInit.itemKraziteCrystal, 'Z', ItemInit.itemZarkiteCrystal});
+        this.addRecipe(new ItemStack(MineHr.armorHorizonBoots, 1), new Object[] {" W W", "HHHH", "HLHI", "RRRR", 'H', ItemInit.itemHorizonCrystal, 'W', Blocks.wool, 'L', Items.leather_boots, 'I', Items.iron_boots, 'R', ItemInit.itemNaturalRubber});
 
         Collections.sort(this.recipes, new WorkbenchRecipeSorter(this));
     }

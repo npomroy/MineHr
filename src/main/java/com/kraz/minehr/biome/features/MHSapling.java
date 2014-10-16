@@ -3,6 +3,7 @@ package com.kraz.minehr.biome.features;
 import java.util.List;
 import java.util.Random;
 
+import com.kraz.minehr.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import com.kraz.minehr.MineHr;
@@ -167,7 +168,7 @@ public class MHSapling extends BlockSapling {
     {
         for (int i = 0; i < iconlength.length; ++i)
         {
-            iconlength[i] = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5) + saplings[i]);
+            iconlength[i] = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + saplings[i]);
         }
     }
 

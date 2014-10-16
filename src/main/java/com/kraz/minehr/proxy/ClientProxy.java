@@ -1,5 +1,6 @@
 package com.kraz.minehr.proxy;
 
+import com.kraz.minehr.client.settings.Keybindings;
 import com.kraz.minehr.entity.EntityCrab;
 import com.kraz.minehr.model.ModelCrab;
 import com.kraz.minehr.renderer.*;
@@ -33,4 +34,8 @@ public class ClientProxy extends CommonProxy {
 
     }
 
+    @Override
+    public void registerKeyBindings() {
+        ClientRegistry.registerKeyBinding(Keybindings.light);
+    }
 }

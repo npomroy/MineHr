@@ -3,11 +3,13 @@ package com.kraz.minehr.blocks;
 import java.util.Random;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.reference.Reference;
 import com.kraz.minehr.tileentity.TileEntityOilLamp;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -54,6 +56,15 @@ public class OilLamp extends BlockContainer {
     public void updateTick(World world, int x, int y, int z, Random random) {
         if(!world.isRemote && this.isOn && !world.isBlockIndirectlyGettingPowered(x, y, z)) {
             world.setBlock(x, y, z, MineHr.blockOilLampOff, 0, 2);
+        }
+    }
+
+    public boolean onBlockActivated (World world, int x, int y, int z, EntityPlayer player, int q, float a, float b, float c) {
+        if (!player.isSneaking()){
+            player.openGui(MineHr.instance, Reference.guiIDOilLamp, world, x, y, z);
+            return true;
+        } else {
+            return false;
         }
     }
 

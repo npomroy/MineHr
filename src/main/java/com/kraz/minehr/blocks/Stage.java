@@ -2,6 +2,7 @@ package com.kraz.minehr.blocks;
 
 import java.util.Random;
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -40,9 +41,9 @@ public class Stage extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(MineHr.modid + ":" + "StageSide");
-        this.iconTop = iconRegister.registerIcon(MineHr.modid + ":" + "StageTop");
-        this.iconSide = iconRegister.registerIcon(MineHr.modid + ":" + "StageSide");
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + "StageSide");
+        this.iconTop = iconRegister.registerIcon(Reference.MOD_ID + ":" + "StageTop");
+        this.iconSide = iconRegister.registerIcon(Reference.MOD_ID + ":" + "StageSide");
     }
 
     @SideOnly(Side.CLIENT)

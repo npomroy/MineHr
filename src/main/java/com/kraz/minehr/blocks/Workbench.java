@@ -1,5 +1,6 @@
 package com.kraz.minehr.blocks;
 
+import com.kraz.minehr.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import com.kraz.minehr.MineHr;
@@ -30,13 +31,13 @@ public class Workbench extends Block {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons (IIconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(MineHr.modid + ":" + "WorkbenchSide");
-        this.workbenchTop = iconRegister.registerIcon(MineHr.modid + ":" + "WorkbenchTop");
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + "WorkbenchSide");
+        this.workbenchTop = iconRegister.registerIcon(Reference.MOD_ID + ":" + "WorkbenchTop");
     }
 
     public boolean onBlockActivated (World world, int x, int y, int z, EntityPlayer player, int q, float a, float b, float c) {
         if (!player.isSneaking()){
-            player.openGui(MineHr.instance, MineHr.guiIDWorksurface, world, x, y, z);
+            player.openGui(MineHr.instance, Reference.guiIDWorksurface, world, x, y, z);
             return true;
         } else {
             return false;

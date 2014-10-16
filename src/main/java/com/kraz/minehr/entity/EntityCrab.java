@@ -1,6 +1,7 @@
 package com.kraz.minehr.entity;
 
 import com.kraz.minehr.MineHr;
+import com.kraz.minehr.init.ItemInit;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -37,7 +38,7 @@ public class EntityCrab extends EntityMob {
 
     protected Item getDropItem()
     {
-        return MineHr.itemRawCrab;
+        return ItemInit.itemRawCrab;
     }
 
     protected void dropFewItems(boolean par1, int par2)
@@ -49,7 +50,7 @@ public class EntityCrab extends EntityMob {
         }
         else
         {
-            this.dropItem(MineHr.itemRawCrab, 1);
+            this.dropItem(ItemInit.itemRawCrab, 1);
         }
     }
 

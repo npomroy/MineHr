@@ -2,6 +2,7 @@ package com.kraz.minehr.biome.features;
 
 import java.util.List;
 
+import com.kraz.minehr.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import com.kraz.minehr.MineHr;
@@ -66,7 +67,7 @@ public class MHLeaves extends BlockLeaves {
 
             for (int j = 0; j < leaftypes[i].length; ++j)
             {
-                this.field_150129_M[i][j] = iconRegister.registerIcon(MineHr.modid + ":" + leaftypes[i][j]);
+                this.field_150129_M[i][j] = iconRegister.registerIcon(Reference.MOD_ID + ":" + leaftypes[i][j]);
             }
         }
     }

@@ -5,19 +5,8 @@ import com.kraz.minehr.armor.RubberArmor;
 import com.kraz.minehr.biome.features.MHLeaves;
 import com.kraz.minehr.biome.features.MHLog;
 import com.kraz.minehr.biome.features.MHSapling;
-import com.kraz.minehr.blocks.MetalBlock;
-import com.kraz.minehr.blocks.OreBlock;
-import com.kraz.minehr.blocks.BlockMHDrying;
-import com.kraz.minehr.blocks.KelpPile;
-import com.kraz.minehr.blocks.KelpStone;
-import com.kraz.minehr.blocks.LobsterTrap;
-import com.kraz.minehr.blocks.MHCrop;
-import com.kraz.minehr.blocks.OilLamp;
-import com.kraz.minehr.blocks.PurifiedKraziteOre;
-import com.kraz.minehr.blocks.PurifiedZarkiteOre;
-import com.kraz.minehr.blocks.Stage;
-import com.kraz.minehr.blocks.TrapBuoy;
-import com.kraz.minehr.blocks.Workbench;
+import com.kraz.minehr.blocks.*;
+import com.kraz.minehr.client.handler.KeyInputEventHandler;
 import com.kraz.minehr.crafting.RecipeRemover;
 import com.kraz.minehr.entity.EntityCrab;
 import com.kraz.minehr.handler.ConfigurationHandler;
@@ -25,24 +14,15 @@ import com.kraz.minehr.handler.CraftingHandler;
 import com.kraz.minehr.handler.EntityHandler;
 import com.kraz.minehr.handler.FuelHandler;
 import com.kraz.minehr.handler.GuiHandler;
-import com.kraz.minehr.items.CodTongue;
-import com.kraz.minehr.items.FilletKnife;
-import com.kraz.minehr.items.HempSpice;
-import com.kraz.minehr.items.HorizonAxe;
-import com.kraz.minehr.items.HorizonHoe;
-import com.kraz.minehr.items.HorizonPickaxe;
-import com.kraz.minehr.items.HorizonShovel;
-import com.kraz.minehr.items.HorizonSword;
-import com.kraz.minehr.items.IronRod;
-import com.kraz.minehr.items.ItemLeafBlocks;
-import com.kraz.minehr.items.ItemLogBlocks;
-import com.kraz.minehr.items.ItemSaplingBlocks;
-import com.kraz.minehr.items.MHDryingSeed;
-import com.kraz.minehr.items.MHItems;
-import com.kraz.minehr.items.Mallet;
-import com.kraz.minehr.items.Pliers;
-import com.kraz.minehr.items.Salt;
+import com.kraz.minehr.init.ItemInit;
+import com.kraz.minehr.init.RecipeInit;
+import com.kraz.minehr.init.SmeltingInit;
+import com.kraz.minehr.items.*;
 import com.kraz.minehr.proxy.CommonProxy;
+import com.kraz.minehr.reference.Reference;
+import com.kraz.minehr.tileentity.TileEntityLobsterTrap;
+import com.kraz.minehr.tileentity.TileEntityOilLamp;
+import com.kraz.minehr.tileentity.TileEntityTrapBuoy;
 import com.kraz.minehr.worldgen.MineHrWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -71,11 +51,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="MineHr", name="Mine Hr", version="1.7.10-0.1")
+@Mod(modid= Reference.MOD_ID, name= Reference.MOD_NAME, version= Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class MineHr {
-
-    public static final String modid = "MineHr";
-    public static final String version = "Alpha v0.1";
 
     MineHrWorldGen eventWorldGen = new MineHrWorldGen();
 
@@ -117,26 +94,6 @@ public class MineHr {
     public static Item toolHorizonShovel;
     public static Item toolHorizonHoe;
 
-    //TODO Remove
-    public static Item itemCopperIngot;
-    public static Item itemTinIngot;
-    public static Item itemBronzeIngot;
-    public static Item itemBrassIngot;
-    public static Item itemNickelIngot;
-    public static Item itemLeadIngot;
-    public static Item itemAluminumIngot;
-    public static Item itemChromiumIngot;
-    public static Item itemMagnesiumIngot;
-    public static Item itemTitaniumIngot;
-    public static Item itemZincIngot;
-
-    public static Item itemKraziteDust;
-    public static Item itemZarkiteDust;
-    public static Item itemKraziteCrystal;
-    public static Item itemZarkiteCrystal;
-    public static Item itemHorizonCrystal;
-    public static Item itemRawResin;
-    public static Item itemNaturalRubber;
     public static Item itemSalt;
 
     public static Item itemHerbGrinder;
@@ -144,37 +101,16 @@ public class MineHr {
     public static Item itemMallet;
     public static Item itemPliers;
     public static Item itemFilletKnife;
-    public static Item itemIronRod;
-    public static Item itemKelp;
-    public static Item itemRawCod;
-    public static Item itemRawCrab;
-    public static Item itemRawLobster;
+    public static Item itemIronRod;;
     public static Item foodCookedLobster;
-    public static Item itemFishFillet;
     public static Item foodCookedFishFillet;
     public static Item itemCodFillet;
     public static Item foodCookedCodFillet;
-    public static Item itemCodTongue;
     public static Item foodCookedCodTongue;
-    public static Item itemCrabLegs;
     public static Item foodCookedCrabLegs;
-    public static Item itemLobsterClaws;
     public static Item foodCookedLobsterClaws;
-    public static Item itemLobsterTail;
     public static Item foodCookedLobsterTail;
     public static Item foodLobsterMeal;
-    public static Item itemSodaAsh;
-    public static Item itemFishGuts;
-    public static Item itemGlassMix;
-    public static Item itemIronPlate;
-    public static Item itemIronWire;
-    public static Item itemIronHook;
-    public static Item itemBoneHook;
-    public static Item itemTwine;
-    public static Item itemRope;
-    public static Item itemLeadedRope;
-    public static Item itemNetting;
-    public static Item itemReadyLobsterTrap;
     public static Item itemHempSpice;
 
     //crops
@@ -222,20 +158,22 @@ public class MineHr {
     public static Block blockOilLampOn;
     public static Block blockOilLampOff;
     public static Block blockStage;
+    public static Block blockStore;
 
     public static Block blockWorkbench;
-    public static final int guiIDWorksurface = 1;
 
-    @SidedProxy(clientSide = "com.kraz.minehr.proxy.ClientProxy", serverSide = "new.minehr.proxy.CommonProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
 
-    @Instance(modid)
+    @Instance(Reference.MOD_ID)
     public static com.kraz.minehr.MineHr instance;
 
     @EventHandler
-    public void PreInit(FMLPreInitializationEvent preEvent){
+    public void preInit(FMLPreInitializationEvent preEvent){
 
         ConfigurationHandler.init(preEvent.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
 
         mineHrTab = new CreativeTabs("MineHr") {
             @SideOnly(Side.CLIENT)
@@ -244,54 +182,20 @@ public class MineHr {
             }
         };
 
+        proxy.registerKeyBindings();
+
+        ItemInit.init();
+
         //Crops
         cropHempPlant = new MHCrop().setBlockName("HempPlant");
         GameRegistry.registerBlock(cropHempPlant, "HempPlant");
-        cropHempSeeds = new ItemSeeds(cropHempPlant, Blocks.farmland).setUnlocalizedName("HempSeeds").setTextureName(modid + ":HempSeeds").setCreativeTab(mineHrTab);
+        cropHempSeeds = new ItemSeeds(cropHempPlant, Blocks.farmland).setUnlocalizedName("HempSeeds").setTextureName(Reference.MOD_ID + ":HempSeeds").setCreativeTab(mineHrTab);
         GameRegistry.registerItem(cropHempSeeds, "HempSeeds");
         cropHemp = new MHItems().setUnlocalizedName("Hemp");
         GameRegistry.registerItem(cropHemp, "Hemp");
         cropDryingCod = new BlockMHDrying(itemCodFillet).setBlockName("DryingCod");
         GameRegistry.registerBlock(cropDryingCod, "DryingCod");
 
-        //TODO Remove
-        itemCopperIngot = new MHItems().setUnlocalizedName("CopperIngot");
-        GameRegistry.registerItem(itemCopperIngot, "CopperIngot");
-        itemTinIngot = new MHItems().setUnlocalizedName("TinIngot");
-        GameRegistry.registerItem(itemTinIngot, "TinIngot");
-        itemBronzeIngot = new MHItems().setUnlocalizedName("BronzeIngot");
-        GameRegistry.registerItem(itemBronzeIngot,"BronzeIngot");
-        itemBrassIngot = new MHItems().setUnlocalizedName("BrassIngot");
-        GameRegistry.registerItem(itemBrassIngot, "BrassIngot");
-        itemNickelIngot = new MHItems().setUnlocalizedName("NickelIngot");
-        GameRegistry.registerItem(itemNickelIngot, "NickelIngot");
-        itemLeadIngot = new MHItems().setUnlocalizedName("LeadIngot");
-        GameRegistry.registerItem(itemLeadIngot, "LeadIngot");
-        itemChromiumIngot = new MHItems().setUnlocalizedName("ChromiumIngot");
-        GameRegistry.registerItem(itemChromiumIngot, "ChromiumIngot");
-        itemAluminumIngot = new MHItems().setUnlocalizedName("AluminumIngot");
-        GameRegistry.registerItem(itemAluminumIngot, "AluminumIngot");
-        itemMagnesiumIngot = new MHItems().setUnlocalizedName("MagnesiumIngot");
-        GameRegistry.registerItem(itemMagnesiumIngot, "MagnesiumIngot");
-        itemTitaniumIngot = new MHItems().setUnlocalizedName("TitaniumIngot");
-        GameRegistry.registerItem(itemTitaniumIngot, "TitaniumIngot");
-        itemZincIngot = new MHItems().setUnlocalizedName("ZincIngot");
-        GameRegistry.registerItem(itemZincIngot, "ZincIngot");
-
-        itemKraziteDust = new MHItems().setUnlocalizedName("KraziteDust");
-        GameRegistry.registerItem(itemKraziteDust, "KraziteDust");
-        itemKraziteCrystal = new MHItems().setUnlocalizedName("KraziteCrystal");
-        GameRegistry.registerItem(itemKraziteCrystal, "KraziteCrystal");
-        itemZarkiteDust = new MHItems().setUnlocalizedName("ZarkiteDust");
-        GameRegistry.registerItem(itemZarkiteDust, "ZarkiteDust");
-        itemZarkiteCrystal = new MHItems().setUnlocalizedName("ZarkiteCrystal");
-        GameRegistry.registerItem(itemZarkiteCrystal, "ZarkiteCrystal");
-        itemHorizonCrystal = new MHItems().setUnlocalizedName("HorizonCrystal");
-        GameRegistry.registerItem(itemHorizonCrystal, "HorizonCrystal");
-        itemRawResin = new MHItems().setUnlocalizedName("RawResin");
-        GameRegistry.registerItem(itemRawResin, "RawResin");
-        itemNaturalRubber = new MHItems().setUnlocalizedName("NaturalRubber");
-        GameRegistry.registerItem(itemNaturalRubber, "NaturalRubber");
         itemSalt = new Salt().setUnlocalizedName("Salt");
         GameRegistry.registerItem(itemSalt, "Salt");
         itemHempSpice = new HempSpice(0, 0.0F, false).setUnlocalizedName("HempSpice");
@@ -328,7 +232,7 @@ public class MineHr {
 
         itemHerbGrinder = new MHItems().setUnlocalizedName("HerbGrinder");
         GameRegistry.registerItem(itemHerbGrinder, "HerbGrinder");
-        itemJigger = new MHItems().setUnlocalizedName("Jigger");
+        itemJigger = new Jigger().setUnlocalizedName("Jigger");
         GameRegistry.registerItem(itemJigger, "Jigger");
         itemMallet = new Mallet().setUnlocalizedName("Mallet");
         GameRegistry.registerItem(itemMallet, "Mallet");
@@ -338,68 +242,25 @@ public class MineHr {
         GameRegistry.registerItem(itemFilletKnife, "FilletKnife");
         itemIronRod = new IronRod().setUnlocalizedName("IronRod");
         GameRegistry.registerItem(itemIronRod, "IronRod");
-        itemFishFillet = new MHItems().setUnlocalizedName("FishFillet");
-        GameRegistry.registerItem(itemFishFillet, "FishFillet");
-        itemRawCod = new MHItems().setUnlocalizedName("RawCod");
-        GameRegistry.registerItem(itemRawCod, "RawCod");
-        itemRawCrab = new MHItems().setUnlocalizedName("RawCrab");
-        GameRegistry.registerItem(itemRawCrab, "RawCrab");
-        itemRawLobster = new MHItems().setUnlocalizedName("RawLobster");
-        GameRegistry.registerItem(itemRawLobster, "RawLobster");
 
-        itemCodTongue = new MHItems().setUnlocalizedName("CodTongue");
-        GameRegistry.registerItem(itemCodTongue, "CodTongue");
-
-        itemCrabLegs = new MHItems().setUnlocalizedName("CrabLegs");
-        GameRegistry.registerItem(itemCrabLegs, "CrabLegs");
-        itemLobsterClaws = new MHItems().setUnlocalizedName("LobsterClaws");
-        GameRegistry.registerItem(itemLobsterClaws, "LobsterClaws");
-        itemLobsterTail = new MHItems().setUnlocalizedName("LobsterTail");
-        GameRegistry.registerItem(itemLobsterTail, "LobsterTail");
-        itemKelp = new MHItems().setUnlocalizedName("Kelp");
-        GameRegistry.registerItem(itemKelp, "Kelp");
-        itemSodaAsh = new MHItems().setUnlocalizedName("SodaAsh");
-        GameRegistry.registerItem(itemSodaAsh, "SodaAsh");
-        itemFishGuts = new MHItems().setUnlocalizedName("FishGuts");
-        GameRegistry.registerItem(itemFishGuts, "FishGuts");
-        itemGlassMix = new MHItems().setUnlocalizedName("GlassMix");
-        GameRegistry.registerItem(itemGlassMix, "GlassMix");
-        itemIronPlate = new MHItems().setUnlocalizedName("IronPlate");
-        GameRegistry.registerItem(itemIronPlate, "IronPlate");
-        itemIronWire = new MHItems().setUnlocalizedName("IronWire");
-        GameRegistry.registerItem(itemIronWire, "IronWire");
-        itemIronHook = new MHItems().setUnlocalizedName("IronHook");
-        GameRegistry.registerItem(itemIronHook, "IronHook");
-        itemBoneHook = new MHItems().setUnlocalizedName("BoneHook");
-        GameRegistry.registerItem(itemBoneHook, "BoneHook");
-        itemTwine = new MHItems().setUnlocalizedName("Twine");
-        GameRegistry.registerItem(itemTwine, "Twine");
-        itemRope = new MHItems().setUnlocalizedName("Rope");
-        GameRegistry.registerItem(itemRope, "Rope");
-        itemLeadedRope = new MHItems().setUnlocalizedName("LeadedRope");
-        GameRegistry.registerItem(itemLeadedRope, "LeadedRope");
-        itemNetting = new MHItems().setUnlocalizedName("Netting");
-        GameRegistry.registerItem(itemNetting, "Netting");
-        itemReadyLobsterTrap = new MHItems().setUnlocalizedName("ReadyLobsterTrap");
-        GameRegistry.registerItem(itemReadyLobsterTrap, "ReadyLobsterTrap");
 
         //Food
         //Heal amount - Saturation - isWolfMeat
-        foodCookedLobster = new ItemFood(6, 0.3F, false).setUnlocalizedName("CookedLobster").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedLobster");
+        foodCookedLobster = new ItemFood(6, 0.3F, false).setUnlocalizedName("CookedLobster").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedLobster");
         GameRegistry.registerItem(foodCookedLobster, "CookedLobster");
-        foodCookedFishFillet = new ItemFood(4, 0.4F, true).setUnlocalizedName("CookedFishFillet").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedFishFillet");
+        foodCookedFishFillet = new ItemFood(4, 0.4F, true).setUnlocalizedName("CookedFishFillet").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedFishFillet");
         GameRegistry.registerItem(foodCookedFishFillet, "CookedFishFillet");
-        foodCookedCodFillet = new ItemFood(4, 0.4F, true).setUnlocalizedName("CookedCodFillet").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedCodFillet");
+        foodCookedCodFillet = new ItemFood(4, 0.4F, true).setUnlocalizedName("CookedCodFillet").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedCodFillet");
         GameRegistry.registerItem(foodCookedCodFillet, "CookedCodFillet");
-        foodCookedCodTongue = new CodTongue(2, 0.3F, false).setUnlocalizedName("CookedCodTongue").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedCodTongue");
+        foodCookedCodTongue = new CodTongue(2, 0.3F, false).setUnlocalizedName("CookedCodTongue").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedCodTongue");
         GameRegistry.registerItem(foodCookedCodTongue, "CookedCodTongue");
-        foodCookedCrabLegs = new ItemFood(4, 0.7F, false).setUnlocalizedName("CookedCrabLegs").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedCrabLegs");
+        foodCookedCrabLegs = new ItemFood(4, 0.7F, false).setUnlocalizedName("CookedCrabLegs").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedCrabLegs");
         GameRegistry.registerItem(foodCookedCrabLegs, "CookedCrabLegs");
-        foodCookedLobsterClaws = new ItemFood(3, 0.5F, false).setUnlocalizedName("CookedLobsterClaws").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedLobsterClaws");
+        foodCookedLobsterClaws = new ItemFood(3, 0.5F, false).setUnlocalizedName("CookedLobsterClaws").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedLobsterClaws");
         GameRegistry.registerItem(foodCookedLobsterClaws, "CookedLobsterClaws");
-        foodCookedLobsterTail = new ItemFood(4, 0.6F, false).setUnlocalizedName("CookedLobsterTail").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":CookedLobsterTail");
+        foodCookedLobsterTail = new ItemFood(4, 0.6F, false).setUnlocalizedName("CookedLobsterTail").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":CookedLobsterTail");
         GameRegistry.registerItem(foodCookedLobsterTail, "CookedLobsterTail");
-        foodLobsterMeal = new ItemFood(10, 0.9F, true).setUnlocalizedName("LobsterMeal").setCreativeTab(mineHrTab).setTextureName(MineHr.modid + ":LobsterMeal");
+        foodLobsterMeal = new ItemFood(10, 0.9F, true).setUnlocalizedName("LobsterMeal").setCreativeTab(mineHrTab).setTextureName(Reference.MOD_ID + ":LobsterMeal");
         GameRegistry.registerItem(foodLobsterMeal, "LobsterMeal");
 
 
@@ -465,24 +326,32 @@ public class MineHr {
         GameRegistry.registerBlock(blockSapling, ItemSaplingBlocks.class, blockSapling.getUnlocalizedName().substring(5));
 
 
+
+
         oreKelpStone = new KelpStone(Material.rock).setBlockName("KelpStone");
         GameRegistry.registerBlock(oreKelpStone, "KelpStone");
         blockKelpPile = new KelpPile(Material.water).setBlockName("KelpPile");
         GameRegistry.registerBlock(blockKelpPile, "KelpPile");
         blockLobsterTrap = new LobsterTrap(Material.wood).setBlockName("LobsterTrap");
         GameRegistry.registerBlock(blockLobsterTrap, "LobsterTrap");
+        GameRegistry.registerTileEntity(TileEntityLobsterTrap.class, "TileEntityLobsterTrap");
         blockWorkbench = new Workbench().setBlockName("Workbench");
         GameRegistry.registerBlock(blockWorkbench, "Workbench");
         blockTrapBuoy = new TrapBuoy(Material.gourd).setBlockName("TrapBuoy");
         GameRegistry.registerBlock(blockTrapBuoy, "TrapBuoy");
+        GameRegistry.registerTileEntity(TileEntityTrapBuoy.class, "TileEntityTrapBuoy");
         blockOilLampOn = new OilLamp(true).setBlockName("OilLampOn");
         GameRegistry.registerBlock(blockOilLampOn, "OilLampOn");
         blockOilLampOff = new OilLamp(false).setBlockName("OilLampOff").setCreativeTab(mineHrTab);
         GameRegistry.registerBlock(blockOilLampOff, "OilLampOff");
+        GameRegistry.registerTileEntity(TileEntityOilLamp.class, "TileEntityOilLamp");
         blockStage = new Stage().setBlockName("Stage");
         GameRegistry.registerBlock(blockStage, "Stage");
 
-        itemCodFillet = new MHDryingSeed(cropDryingCod, MineHr.blockStage).setUnlocalizedName("CodFillet").setTextureName(MineHr.modid + ":CodFillet");
+        blockStore = new BlockStore().setBlockName("StoreBlock");
+        GameRegistry.registerBlock(blockStore, "StoreBlock");
+
+        itemCodFillet = new MHDryingSeed(cropDryingCod, MineHr.blockStage).setUnlocalizedName("CodFillet").setTextureName(Reference.MOD_ID + ":CodFillet");
         GameRegistry.registerItem(itemCodFillet, "CodFillet");
 
         //rarity 1 - 10
@@ -497,117 +366,14 @@ public class MineHr {
     }
 
     @EventHandler
-    public void Init(FMLInitializationEvent event) {
-
+    public void init(FMLInitializationEvent event) {
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
         FMLCommonHandler.instance().bus().register(new CraftingHandler());
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
-        //recipes
-        //TODO
-        RecipeRemover.removeRecipe(Items.boat);
-        RecipeRemover.removeRecipe(Items.fishing_rod);
-        RecipeRemover.removeRecipe(Items.stone_axe);
-        RecipeRemover.removeRecipe(Items.stone_pickaxe);
-        RecipeRemover.removeRecipe(Items.stone_hoe);
-        RecipeRemover.removeRecipe(Items.stone_shovel);
-        RecipeRemover.removeRecipe(Items.stone_sword);
+        RecipeInit.init();
 
-        //Recipes - Metal Blocks
-        GameRegistry.addRecipe(new ItemStack(blockCopperBlock), new Object[]{"CCC","CCC","CCC",'C', itemCopperIngot});
-        GameRegistry.addRecipe(new ItemStack(blockTinBlock), new Object[]{"CCC","CCC","CCC",'C', itemTinIngot});
-        GameRegistry.addRecipe(new ItemStack(blockBronzeBlock), new Object[]{"CCC","CCC","CCC",'C', itemBronzeIngot});
-        GameRegistry.addRecipe(new ItemStack(blockBrassBlock), new Object[]{"CCC","CCC","CCC",'C', itemBrassIngot});
-        GameRegistry.addRecipe(new ItemStack(blockNickelBlock), new Object[]{"CCC","CCC","CCC",'C', itemNickelIngot});
-        GameRegistry.addRecipe(new ItemStack(blockLeadBlock), new Object[]{"CCC","CCC","CCC",'C', itemLeadIngot});
-        GameRegistry.addRecipe(new ItemStack(blockAluminumBlock), new Object[]{"CCC","CCC","CCC",'C', itemAluminumIngot});
-        GameRegistry.addRecipe(new ItemStack(blockChromiumBlock), new Object[]{"CCC","CCC","CCC",'C', itemChromiumIngot});
-        GameRegistry.addRecipe(new ItemStack(blockMagnesiumBlock), new Object[]{"CCC","CCC","CCC",'C', itemMagnesiumIngot});
-        GameRegistry.addRecipe(new ItemStack(blockTitaniumBlock), new Object[]{"CCC","CCC","CCC",'C', itemTitaniumIngot});
-        GameRegistry.addRecipe(new ItemStack(blockZincBlock), new Object[]{"CCC","CCC","CCC",'C', itemZincIngot});
-        GameRegistry.addRecipe(new ItemStack(blockPurifiedKraziteOre), new Object[]{"CC","CC",'C', itemKraziteDust});
-        GameRegistry.addRecipe(new ItemStack(blockPurifiedZarkiteOre), new Object[]{"CC","CC",'C', itemZarkiteDust});
-
-        //Recipes - Stone Tools
-        GameRegistry.addRecipe(new ItemStack(Items.stone_axe), new Object[]{" CC","EDC"," D ",'C', Blocks.cobblestone, 'D', Items.stick, 'E', Items.string});
-        GameRegistry.addRecipe(new ItemStack(Items.stone_pickaxe), new Object[]{"CCC","EDE"," D ",'C', Blocks.cobblestone, 'D', Items.stick, 'E', Items.string});
-        GameRegistry.addRecipe(new ItemStack(Items.stone_shovel), new Object[]{" C ","EDE"," D ",'C', Blocks.cobblestone, 'D', Items.stick, 'E', Items.string});
-        GameRegistry.addRecipe(new ItemStack(Items.stone_hoe), new Object[]{"CC ","ED "," D ",'C', Blocks.cobblestone, 'D', Items.stick, 'E', Items.string});
-        GameRegistry.addRecipe(new ItemStack(Items.stone_sword), new Object[]{" C "," C ","EDE",'C', Blocks.cobblestone, 'D', Items.stick, 'E', Items.string});
-
-        //Recipes - Horizon Tools and Armor
-        GameRegistry.addRecipe(new ItemStack(toolHorizonAxe), new Object[]{" CC","EDC"," D ",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin});
-        GameRegistry.addRecipe(new ItemStack(toolHorizonPickaxe), new Object[]{"CCC","EDE"," D ",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin});
-        GameRegistry.addRecipe(new ItemStack(toolHorizonShovel), new Object[]{" C ","EDE"," D ",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin});
-        GameRegistry.addRecipe(new ItemStack(toolHorizonHoe), new Object[]{"CC ","ED "," D ",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin});
-        GameRegistry.addRecipe(new ItemStack(toolHorizonSword), new Object[]{" C "," C ","EDE",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin});
-        //TODO enchanted crating
-        GameRegistry.addRecipe(new ItemStack(toolHorizonSword), new Object[]{" C "," CF","EDE",'C', itemHorizonCrystal, 'D', Items.stick, 'E', itemRawResin, 'F', Items.diamond});
-
-        //Recipes - Alloys
-        GameRegistry.addRecipe(new ItemStack(itemBronzeIngot, 2), new Object[]{"CC", "CD", 'C', itemCopperIngot, 'D', itemTinIngot});
-        GameRegistry.addRecipe(new ItemStack(itemBrassIngot, 2), new Object[]{"CC", "CD", 'C', itemCopperIngot, 'D', itemZincIngot});
-
-        //Recipes - Mod Blocks
-        GameRegistry.addRecipe(new ItemStack(blockKelpPile), new Object[]{"CCC","CCC","CCC",'C', itemKelp});
-        GameRegistry.addRecipe(new ItemStack(blockWorkbench), new Object[]{"CCC", "DED", "DFD", 'C', Blocks.planks, 'D', Items.stick, 'E', new ItemStack(itemPliers, 1, OreDictionary.WILDCARD_VALUE), 'F', new ItemStack(itemMallet, 1, OreDictionary.WILDCARD_VALUE)});
-
-        //Recipes - Food
-        GameRegistry.addRecipe(new ItemStack(itemFishFillet), new Object[]{"   "," C "," D ",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', Items.fish});
-        GameRegistry.addRecipe(new ItemStack(itemCodFillet), new Object[]{"   "," C "," D ",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', itemRawCod});
-        GameRegistry.addRecipe(new ItemStack(itemCodTongue), new Object[]{"   ","CD ","   ",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', itemRawCod});
-        GameRegistry.addRecipe(new ItemStack(itemCrabLegs), new Object[]{"C","D",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', itemRawCrab});
-        GameRegistry.addRecipe(new ItemStack(itemLobsterClaws), new Object[]{"C  "," D ",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', itemRawLobster});
-        GameRegistry.addRecipe(new ItemStack(foodCookedLobsterClaws), new Object[]{"C  "," D ",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', foodCookedLobster});
-        GameRegistry.addRecipe(new ItemStack(itemLobsterTail), new Object[]{"C","D",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', itemRawLobster});
-        GameRegistry.addRecipe(new ItemStack(foodCookedLobsterTail), new Object[]{"C","D",'C', new ItemStack(itemFilletKnife, 1, OreDictionary.WILDCARD_VALUE), 'D', foodCookedLobster});
-        GameRegistry.addShapelessRecipe(new ItemStack(foodLobsterMeal), new Object[]{foodCookedLobsterClaws, foodCookedLobsterTail, Items.carrot, Items.potato});
-
-        //Recipes - Components
-        GameRegistry.addRecipe(new ItemStack(itemIronPlate, 2), new Object[]{"C","D",'C', new ItemStack(itemMallet, 1, OreDictionary.WILDCARD_VALUE), 'D', Items.iron_ingot});
-        GameRegistry.addRecipe(new ItemStack(itemIronWire, 3), new Object[]{"D","C",'C', new ItemStack(itemPliers, 1, OreDictionary.WILDCARD_VALUE), 'D', itemIronPlate});
-        GameRegistry.addRecipe(new ItemStack(itemIronHook), new Object[]{"CD",'C', new ItemStack(itemPliers, 1, OreDictionary.WILDCARD_VALUE), 'D', itemIronWire});
-        GameRegistry.addRecipe(new ItemStack(itemBoneHook), new Object[]{"CD",'C', new ItemStack(itemPliers, 1, OreDictionary.WILDCARD_VALUE), 'D', Items.bone});
-        GameRegistry.addRecipe(new ItemStack(itemRope), new Object[]{"CCC",'C', Items.string});
-        GameRegistry.addShapelessRecipe(new ItemStack(itemTwine, 2), new Object[]{Items.string});
-        GameRegistry.addRecipe(new ItemStack(itemNetting), new Object[]{"CDC", "DDD", "CDC", 'C', itemRope, 'D', itemTwine});
-
-        //Recipes - Tools
-        GameRegistry.addRecipe(new ItemStack(itemFilletKnife), new Object[]{"C","D",'C', Items.iron_ingot,'D',Items.stick});
-        GameRegistry.addRecipe(new ItemStack(itemMallet), new Object[]{"CCC"," D ", " D ", 'C', Items.iron_ingot,'D',Items.stick});
-        GameRegistry.addRecipe(new ItemStack(itemPliers), new Object[]{"C E"," C ", "D D", 'C', Items.iron_ingot,'D',Items.stick, 'E', new ItemStack(itemMallet, 1, OreDictionary.WILDCARD_VALUE)});
-
-        //420
-        GameRegistry.addRecipe(new ItemStack(itemHerbGrinder), new Object[]{"C", "D", "C", 'C', itemIronPlate, 'D', itemIronWire});
-        GameRegistry.addShapelessRecipe(new ItemStack(itemHempSpice, 2), new Object[]{cropHemp, itemHerbGrinder});
-
-        GameRegistry.addShapelessRecipe(new ItemStack(itemGlassMix, 2), new Object[]{itemSodaAsh, Blocks.sand});
-        //TODO
-
-
-        //smelting
-        GameRegistry.addSmelting(oreCopperOre, new ItemStack(itemCopperIngot), 0);
-        GameRegistry.addSmelting(oreTinOre, new ItemStack(itemTinIngot), 0);
-        GameRegistry.addSmelting(oreNickelOre, new ItemStack(itemNickelIngot), 0);
-        GameRegistry.addSmelting(oreLeadOre, new ItemStack(itemLeadIngot), 0);
-        GameRegistry.addSmelting(oreAluminumOre, new ItemStack(itemAluminumIngot), 0);
-        GameRegistry.addSmelting(oreChromiteOre, new ItemStack(itemChromiumIngot), 0);
-        GameRegistry.addSmelting(oreMagnesiumOre, new ItemStack(itemMagnesiumIngot), 0);
-        GameRegistry.addSmelting(oreTitaniumOre, new ItemStack(itemTitaniumIngot), 0);
-        GameRegistry.addSmelting(oreZincOre, new ItemStack(itemZincIngot), 0);
-
-        GameRegistry.addSmelting(blockPurifiedKraziteOre, new ItemStack(itemKraziteCrystal), 5);
-        GameRegistry.addSmelting(blockPurifiedZarkiteOre, new ItemStack(itemZarkiteCrystal), 5);
-
-        GameRegistry.addSmelting(itemRawLobster, new ItemStack(foodCookedLobster), 0);
-        GameRegistry.addSmelting(itemCodFillet, new ItemStack(foodCookedCodFillet), 0);
-        GameRegistry.addSmelting(itemCodTongue, new ItemStack(foodCookedCodTongue), 0);
-        GameRegistry.addSmelting(itemCrabLegs, new ItemStack(foodCookedCrabLegs), 0);
-        GameRegistry.addSmelting(itemLobsterClaws, new ItemStack(foodCookedLobsterClaws), 0);
-        GameRegistry.addSmelting(itemLobsterTail, new ItemStack(foodCookedLobsterTail), 0);
-        GameRegistry.addSmelting(itemFishFillet, new ItemStack(foodCookedFishFillet), 0);
-
-        GameRegistry.addSmelting(itemKelp, new ItemStack(itemSodaAsh), 0);
-        GameRegistry.addSmelting(itemRawResin, new ItemStack(itemNaturalRubber), 0);
+        SmeltingInit.init();
 
         GameRegistry.registerFuelHandler(new FuelHandler());
 
@@ -617,7 +383,7 @@ public class MineHr {
     }
 
     @EventHandler
-    public void PostInit(FMLPostInitializationEvent postEvent) {
+    public void postInit(FMLPostInitializationEvent postEvent) {
 
     }
 

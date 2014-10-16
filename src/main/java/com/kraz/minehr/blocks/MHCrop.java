@@ -2,6 +2,7 @@ package com.kraz.minehr.blocks;
 
 import java.util.Random;
 
+import com.kraz.minehr.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import com.kraz.minehr.MineHr;
@@ -20,7 +21,7 @@ public class MHCrop extends BlockCrops {
         this.iconArray = new IIcon[4];
 
         for(int i = 0; i < this.iconArray.length; i++) {
-            this.iconArray[i] = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5) + (i + 1));
+            this.iconArray[i] = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5) + (i + 1));
         }
     }
 

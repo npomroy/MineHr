@@ -1,5 +1,6 @@
 package com.kraz.minehr.items;
 
+import com.kraz.minehr.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import com.kraz.minehr.MineHr;
@@ -15,7 +16,7 @@ public class HorizonAxe extends ItemAxe {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(MineHr.modid + ":" + this.getUnlocalizedName().substring(5));
+        this.itemIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
     }
 
 

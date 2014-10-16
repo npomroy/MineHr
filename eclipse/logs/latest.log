@@ -1,8 +1,8 @@
-[22:42:17] [main/INFO]: Setting user: Player917
-[22:42:18] [Client thread/INFO]: LWJGL Version: 2.9.1
-[22:42:22] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Mine Hr
-[22:42:23] [Sound Library Loader/INFO]: Sound engine started
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
+[01:13:29] [main/INFO]: Setting user: Player3
+[01:13:30] [Client thread/INFO]: LWJGL Version: 2.9.1
+[01:13:34] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Mine Harbour
+[01:13:35] [Sound Library Loader/INFO]: Sound engine started
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
 java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -32,7 +32,7 @@ java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_205_
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubberTop.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubberTop.png
 java.io.FileNotFoundException: minehr:textures/blocks/LogRubberTop.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -62,7 +62,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LogRubberTop.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubber.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/LeafRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -92,7 +92,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LeafRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
 java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -122,7 +122,7 @@ java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_206_
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubberOpaque.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubberOpaque.png
 java.io.FileNotFoundException: minehr:textures/blocks/LeafRubberOpaque.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -152,7 +152,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LeafRubberOpaque.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubber.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/LogRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -182,7 +182,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LogRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/SaplingRubber.png
+[01:13:35] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/SaplingRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/SaplingRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -212,8 +212,8 @@ java.io.FileNotFoundException: minehr:textures/blocks/SaplingRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[22:42:23] [Client thread/ERROR]: Unable to parse metadata from minehr:textures/items/LobsterMeal.png
+[01:13:35] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[01:13:35] [Client thread/ERROR]: Unable to parse metadata from minehr:textures/items/LobsterMeal.png
 java.lang.RuntimeException: broken aspect ratio and not an animation
 	at net.minecraft.client.renderer.texture.TextureAtlasSprite.loadSprite(TextureAtlasSprite.java:245) ~[TextureAtlasSprite.class:?]
 	at net.minecraft.client.renderer.texture.TextureMap.loadTextureAtlas(TextureMap.java:170) [TextureMap.class:?]
@@ -242,9 +242,9 @@ java.lang.RuntimeException: broken aspect ratio and not an animation
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:23] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[22:42:23] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Mine Hr
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
+[01:13:35] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[01:13:36] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Mine Harbour
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
 java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_205_OilLampOn.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -277,7 +277,7 @@ java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_205_
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubberTop.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubberTop.png
 java.io.FileNotFoundException: minehr:textures/blocks/LogRubberTop.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -310,7 +310,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LogRubberTop.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubber.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/LeafRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -343,7 +343,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LeafRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
 java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_206_OilLampOff.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -376,7 +376,7 @@ java.io.FileNotFoundException: minecraft:textures/blocks/MISSING_ICON_BLOCK_206_
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubberOpaque.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LeafRubberOpaque.png
 java.io.FileNotFoundException: minehr:textures/blocks/LeafRubberOpaque.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -409,7 +409,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LeafRubberOpaque.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubber.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/LogRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/LogRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -442,7 +442,7 @@ java.io.FileNotFoundException: minehr:textures/blocks/LogRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/SaplingRubber.png
+[01:13:36] [Client thread/ERROR]: Using missing texture, unable to load minehr:textures/blocks/SaplingRubber.png
 java.io.FileNotFoundException: minehr:textures/blocks/SaplingRubber.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:65) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -475,8 +475,8 @@ java.io.FileNotFoundException: minehr:textures/blocks/SaplingRubber.png
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[22:42:24] [Client thread/ERROR]: Unable to parse metadata from minehr:textures/items/LobsterMeal.png
+[01:13:36] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[01:13:36] [Client thread/ERROR]: Unable to parse metadata from minehr:textures/items/LobsterMeal.png
 java.lang.RuntimeException: broken aspect ratio and not an animation
 	at net.minecraft.client.renderer.texture.TextureAtlasSprite.loadSprite(TextureAtlasSprite.java:245) ~[TextureAtlasSprite.class:?]
 	at net.minecraft.client.renderer.texture.TextureMap.loadTextureAtlas(TextureMap.java:170) [TextureMap.class:?]
@@ -508,6 +508,26 @@ java.lang.RuntimeException: broken aspect ratio and not an animation
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_11]
 	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0_11]
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134) [idea_rt.jar:?]
-[22:42:24] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[22:42:25] [Sound Library Loader/INFO]: Sound engine started
-[22:42:36] [Client thread/INFO]: Stopping!
+[01:13:36] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[01:13:37] [Sound Library Loader/INFO]: Sound engine started
+[01:13:39] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[01:13:39] [Server thread/INFO]: Generating keypair
+[01:13:39] [Server thread/INFO]: Preparing start region for level 0
+[01:13:40] [Server thread/INFO]: Changing view distance to 12, from 10
+[01:13:40] [Server thread/INFO]: Player3[local:E:3d485108] logged in with entity id 444 at (-442.85071876397103, 64.12442997014077, 100.18609397188659)
+[01:13:40] [Server thread/INFO]: Player3 joined the game
+[01:13:40] [Server thread/INFO]: Saving and pausing game...
+[01:13:40] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[01:13:40] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[01:13:40] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[01:13:52] [Server thread/INFO]: Saving and pausing game...
+[01:13:52] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[01:13:52] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[01:13:52] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[01:13:53] [Server thread/INFO]: Stopping server
+[01:13:53] [Server thread/INFO]: Saving players
+[01:13:53] [Server thread/INFO]: Saving worlds
+[01:13:53] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[01:13:53] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[01:13:53] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[01:13:53] [Client thread/INFO]: Stopping!
