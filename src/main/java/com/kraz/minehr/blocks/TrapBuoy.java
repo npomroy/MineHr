@@ -56,6 +56,7 @@ public class TrapBuoy extends BlockContainer {
                 player.inventory.addItemStackToInventory(ropeStack);
                 player.inventory.addItemStackToInventory(trapStack);
                 player.inventory.addItemStackToInventory(fishStack);
+                world.setBlockToAir(x, y, z);
                 world.setBlock(x, y - tileentity.getDepth() - 1, z, Blocks.water);
                 world.removeTileEntity(x, y, z);
                 haulTick = 0;
@@ -79,6 +80,7 @@ public class TrapBuoy extends BlockContainer {
     public void breakBlock(World world, int x, int y, int z, int i, int j) {
 
         world.removeTileEntity(x, y, z);
+        world.setBlockToAir(x, y, z);
     }
 
     public void updateTick(World world, int x, int y, int z, Random random)
